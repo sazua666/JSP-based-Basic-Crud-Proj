@@ -23,9 +23,9 @@
         if (!newPass.equals(confPass)) {
             registerErr = "Passwords do not match. Please try again.";
         } else {
-            String dbUrl  = "jdbc:mysql://localhost:3306/feedbackdata";
-            String dbUser = "root";
-            String dbPass = "123654";
+            String dbUrl  = "jdbc:mysql://localhost:3306/your_database_name"; // change if your database name is different
+            String dbUser = "root"; // change if your username is different
+            String dbPass = "password"; // change if your password is different
 
             Connection        con = null;
             PreparedStatement ps  = null;

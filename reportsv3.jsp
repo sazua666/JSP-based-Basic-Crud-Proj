@@ -15,9 +15,9 @@
 
 <%
     /* ── Fetch all report data once, store in List ──────── */
-    String dbUrl  = "jdbc:mysql://localhost:3306/REPORTS";
-    String dbUser = "root";
-    String dbPass = "123654";
+    String dbUrl  = "jdbc:mysql://localhost:3306/your_database_name"; // Replace with your actual database URL
+    String dbUser = "root"; // Replace with your actual database username
+    String dbPass = "password"; // Replace with your actual database password
 
     /* Each record: String[]{id, title, author} */
     List<String[]> reportRows = new ArrayList<String[]>();
