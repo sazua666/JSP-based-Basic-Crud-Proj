@@ -8,17 +8,6 @@ Built with **NetBeans**, **GlassFish**, **JSP/JDBC**, and **MySQL**.
 
 </div>
 
----
-
-## Contents
-
-- [About the project](#about-the-project)
-- [Application screenshots](#application-screenshots)
-- [Architecture and project flow](#architecture-and-project-flow)
-- [Requirements](#requirements)
-- [Run locally](#run-locally)
-- [Troubleshooting](#troubleshooting)
-- [Security note](#security-note)
 
 ## About the project
 
@@ -64,14 +53,11 @@ The browser sends requests to GlassFish, which executes the relevant JSP page. T
 
 ## Requirements
 
-- Git
 - JDK version supported by your NetBeans and GlassFish versions
 - Apache NetBeans with Java Web support
 - GlassFish Server registered in NetBeans
 - MySQL Server and the MySQL command-line client
 - MySQL Connector/J JDBC driver
-
-> **MySQL 5.5 compatibility:** The JSPs currently use `com.mysql.cj.jdbc.Driver`, the driver class for Connector/J 8.x. Connector/J 8.x is not intended for MySQL Server 5.5. To use MySQL 5.5, use Connector/J 5.1.49 and change the driver class in all six JDBC-using JSP files to `com.mysql.jdbc.Driver`. Alternatively, use a newer MySQL Server supported by Connector/J 8.x and keep the source's current driver class. MySQL 5.5 and Connector/J 5.1 are obsolete; use them only for local or legacy development.
 
 ## Run locally
 
@@ -198,7 +184,3 @@ The default GlassFish HTTP port is `8080`. If your server uses a different port 
 | JDBC driver class not found | Confirm the Connector/J JAR is in the GlassFish domain `lib` directory and restart GlassFish. For MySQL 5.5, verify the `com.mysql.jdbc.Driver` class and Connector/J 5.1.49 are used. |
 | Access denied or unknown database | Check the JDBC URL, username, and password in all six JSPs; make sure MySQL is running and the `pslv_db` tables exist. |
 | Page not found | Confirm deployment succeeded, the context root is `/pca2final`, and the URL uses the correct GlassFish port. |
-
-## Security note
-
-This is a learning/demo project. Admin passwords are stored and compared as plain text, and database credentials are embedded in JSP source files. Do not use real or reused passwords, expose the application to the public internet, or store sensitive information without implementing password hashing, appropriate authentication, and secure secret management.
